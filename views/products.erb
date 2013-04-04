@@ -9,7 +9,11 @@
   <tr>
     <td><%= row['name'] %></td>
     <td><%= row['price'] %></td>
-    <td><%= row['on_sale'] %></td>
+    <td><% if row['on_sale'] == 't' %>
+        <img src='sale_pic.jpg' />
+          <% end %>
+
+    </td>
   </tr>
   <% end %>
 </table>

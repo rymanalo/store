@@ -7,7 +7,7 @@ div {
 }
 
 tr:nth-child(2n) {
-  background-color: #99ff99;
+  background-color: #44bb99;
 }
 
 a {
@@ -19,4 +19,8 @@ a {
   border-bottom: 3px #008 solid;
   border-right: 3px #008 solid;
   background: #00b;
+}
+
+img {
+  width: 50px;
 }
