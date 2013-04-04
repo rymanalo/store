@@ -1,6 +1,6 @@
-<h1>New Product</h1>
+<h1>Update Product</h1>
 
-<form action="/new-product" method="post">
+<form action="/products/<%= @id %>" method="post">
   <o>
     <label for='product_name'>Product Name</label>
   <p>
@@ -10,7 +10,7 @@
   <p>
     <input type="text" name="product_price" />
   <p>
-  <button>Save it!</button>
+  <button>Update it!</button>
 </form>
 
 <a href='/'> Back </a>

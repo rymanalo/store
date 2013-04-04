@@ -8,13 +8,13 @@
   </tr>
   <% @rs.each do |row| %>
   <tr>
-    <td><a class="regular" href="/products/<%= row['id'] %>"> <%= row['id'] %></a></td>
-    <td><%= row['name'] %></td>
+    <td><%= row['id'] %></label></td>
+    <td><a class="regular" href="/products/<%= row['id'] %>"><%= row['name'] %></label></a></td>
     <td><%= row['price'] %></td>
     <td><% if row['on_sale'] == 't' %>
         <img src='sale_pic.jpg' />
-          <% end %>
-    </td>
+          <% end %></td>
+    <td><a class="regular" href="/products/<%= row['id'] %>/edit"><button>UPDATE</button></a></td>
   </tr>
   <% end %>
 </table>
