@@ -23,3 +23,24 @@ get '/products' do
   @rs = db.prepare('SELECT * FROM products;').execute
   erb :products
 end
+
+get '/new-product' do
+  erb :new_product
+end
+
+post '/new-product' do
+  @name = params[:product_name]
+  @price = params[:product_price]
+  db = SQLite3::Database.new "store.sqlite3"
+  sql = "INSERT INTO products ('name', 'price') VALUES('#{@name}', '#{@price}');"
+  @rs = db.execute(sql)
+  erb :product_created
+end
+
+get '/products/:id' do
+  db = SQLite3::Database.new "store.sqlite3"
+  db.results_as_hash = true
+  @id = params[:id]
+  @rs = db.prepare("SELECT * FROM products WHERE id = #{@id};").execute
+  erb :product_id
+end
