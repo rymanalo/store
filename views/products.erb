@@ -1,0 +1,16 @@
+<a href='/'> Back </a>
+<div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+  <% @rs.each do |row| %>
+  <tr>
+    <td><%= row['name'] %></td>
+    <td><%= row['price'] %></td>
+    <td><%= row['on_sale'] %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
