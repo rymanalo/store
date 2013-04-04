@@ -18,6 +18,17 @@ a {
   background: #00b;
 }
 
+.regular {
+  width: 15px;
+  height: 15px;
+  color: blue;
+  text-decoration: none;
+  font-size: 10pt;
+  display: inline-block;
+  border: 3px #f00 solid;
+  background: none;
+
+}
 img {
   width: 50px;
 }

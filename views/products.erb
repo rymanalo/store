@@ -8,7 +8,7 @@
   </tr>
   <% @rs.each do |row| %>
   <tr>
-    <td><a href="/products/<%= row['id'] %>"> <%= row['id'] %></a></td>
+    <td><a class="regular" href="/products/<%= row['id'] %>"> <%= row['id'] %></a></td>
     <td><%= row['name'] %></td>
     <td><%= row['price'] %></td>
     <td><% if row['on_sale'] == 't' %>
