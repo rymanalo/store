@@ -1,9 +1,6 @@
 body {
+  background: white;
   text-align: center;
-}
-
-div {
-  position: absolute;
 }
 
 tr:nth-child(2n) {
@@ -23,4 +20,9 @@ a {
 
 img {
   width: 50px;
+}
+
+table {
+  margin: auto;
+
 }
