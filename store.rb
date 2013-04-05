@@ -5,6 +5,9 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
 require 'better_errors'
+require 'open-uri'
+require 'json'
+require 'uri'
 
 configure :development do
   use BetterErrors::Middleware
@@ -39,6 +42,13 @@ end
 get '/products.json' do
   @rs = @db.execute('SELECT name, on_sale FROM products;')
   @rs.to_json
+end
+
+get '/products/search' do
+  @q =  params[:q]
+  file = open("http://search.twittwe.com/search.json?q=#{URI.escape(@q)}")
+  @results = JSON.load(file.read)
+  erb :search_results
 end
 
 get '/new-product' do
