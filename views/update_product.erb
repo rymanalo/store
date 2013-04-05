@@ -9,8 +9,10 @@
     <label for='product_price'>Product Price</label>
   <p>
     <input type="text" name="product_price" required />
+  <br>
+    <input type="checkbox" name="on_sale" value='t'>On Sale?
   <p>
   <button>Update it!</button>
 </form>
 
-<a href='/products'> Back </a>
+<a href='/products/<%= @id %>'> Back </a>

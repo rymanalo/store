@@ -38,7 +38,8 @@ end
 post '/new-product' do
   @name = params[:product_name]
   @price = params[:product_price]
-  sql = "INSERT INTO products ('name', 'price') VALUES('#{@name}', '#{@price}');"
+  @on_sale = params[:on_sale]
+  sql = "INSERT INTO products ('name', 'price', 'on_sale') VALUES('#{@name}', '#{@price}', '#{@on_sale}');"
   @rs = @db.execute(sql)
   erb :product_created
 end
@@ -58,7 +59,8 @@ post '/products/:id' do
   @id = params[:id]
   @name = params[:product_name]
   @price = params[:product_price]
-  sql = "UPDATE products SET name = '#{@name}', price = '#{@price}' WHERE id = #{@id};"
+  @on_sale = params[:on_sale]
+  sql = "UPDATE products SET name = '#{@name}', price = '#{@price}', on_sale = '#{@on_sale}' WHERE id = #{@id};"
   @rs = @db.execute(sql)
   erb :product_updated
 end
