@@ -52,6 +52,10 @@ end
 
 get '/products/:id/edit' do
   @id = params[:id]
+  sql = "SELECT * FROM products WHERE id = #{@id};"
+  row = @db.get_first_row(sql)
+  @name = row['name']
+  @price = row['price']
   erb :update_product
 end
 
