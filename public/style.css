@@ -36,10 +36,12 @@ table {
 }
 
 header a{
+  width: 200px;
   color: blue;
   text-decoration: none;
   font-size: 15pt;
-  display: inline;
+  display: inline-block;
   border: 2px #d00 solid;
   background: #bbb;
+  margin: auto;
 }
