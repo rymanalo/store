@@ -18,6 +18,15 @@ a {
   background: #00b;
 }
 
+.twitter {
+  color: red;
+  text-decoration: none;
+  font-size: 15px;
+  display: inline-block;
+  border: 3px #00d solid;
+  background: black;
+}
+
 .regular {
   color: red;
   text-decoration: none;

@@ -21,7 +21,7 @@ end
 
  
 get '/users' do
-  @rs = @db.prepare('SELECT * FROM users;').execute
+  @rs = @db.execute('SELECT * FROM users;')
   erb :show_users
 end
  
@@ -35,7 +35,7 @@ end
 end
 
 get '/products' do
-  @rs = @db.prepare('SELECT * FROM products;').execute
+  @rs = @db.execute('SELECT * FROM products;')
   erb :products
 end
 
@@ -66,7 +66,7 @@ end
 
 get '/products/:id' do
   @id = params[:id]
-  @rs = @db.prepare("SELECT * FROM products WHERE id = #{@id};").execute
+  @rs = @db.execute("SELECT * FROM products WHERE id = #{@id};")
   erb :product_id
 end
 

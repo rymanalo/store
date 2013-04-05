@@ -13,7 +13,7 @@
     <td><% if row['on_sale'] == 't' %>
         <img src='sale_pic.jpg' />
           <% end %></td>
-    <td><a href="/products/search?q=<%= URI.escape(row['name']) %>"> Search on Twitter </a> </td>
+    <td><a class="twitter" href="/products/search?q=<%= URI.escape(row['name']) %>"> Search on Twitter </a> </td>
   </tr>
   <% end %>
 </table>
