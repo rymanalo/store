@@ -63,10 +63,9 @@ post '/products/:id' do
   erb :product_updated
 end
 
-# delete '/products/:id/destroy' do
-#   @name = params[:product_name]
-#   @id = params[:product_id]
-#   sql = "DELETE FROM products WHERE id = @id;"
-#   @rs = @db.execute(sql)
-#   erb :product_updated
-# end
+post '/products/:id/destroy' do
+  @id = params[:id]
+  sql = "DELETE FROM products WHERE id = #{@id};"
+  @rs = @db.execute(sql)
+  erb :product_deleted
+end

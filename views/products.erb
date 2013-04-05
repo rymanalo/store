@@ -1,20 +1,17 @@
 <div>
 <table>
   <tr>
-    <th>Id</th>
     <th>Name</th>
     <th>Price</th>
     <th>Sale</th>
   </tr>
   <% @rs.each do |row| %>
   <tr>
-    <td><%= row['id'] %></label></td>
     <td><a class="regular" href="/products/<%= row['id'] %>"><%= row['name'] %></label></a></td>
     <td><%= row['price'] %></td>
     <td><% if row['on_sale'] == 't' %>
         <img src='sale_pic.jpg' />
           <% end %></td>
-    <td><a class="regular" href="/products/<%= row['id'] %>/edit"><button>UPDATE</button></a></td>
   </tr>
   <% end %>
 </table>

@@ -12,9 +12,9 @@
     <td><%= row['id'] %></td>
     <td><% if row['on_sale'] == 't' %>
         <img src='../sale_pic.jpg' />
-          <% end %>
-
-    </td>
+          <% end %></td>
+    <td><a class="regular" href="/products/<%= row['id'] %>/edit"><button>UPDATE</button></a></td>
+    <td><form action="/products/<%= row['id'] %>/destroy" method="post"><button>DELETE</button></form></td>
   </tr>
   <% end %>
 </table>
