@@ -22,6 +22,11 @@ get '/users' do
   erb :show_users
 end
  
+get '/users.json' do
+  @rs = @db.execute('SELECT id, name FROM users;')
+  @rs.to_json
+end
+
  get '/' do
   erb :home
 end
@@ -29,6 +34,11 @@ end
 get '/products' do
   @rs = @db.prepare('SELECT * FROM products;').execute
   erb :products
+end
+
+get '/products.json' do
+  @rs = @db.execute('SELECT name, on_sale FROM products;')
+  @rs.to_json
 end
 
 get '/new-product' do
