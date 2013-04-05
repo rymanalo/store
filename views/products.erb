@@ -4,6 +4,7 @@
     <th>Name</th>
     <th>Price</th>
     <th>Sale</th>
+    <th>Search</th>
   </tr>
   <% @rs.each do |row| %>
   <tr>
@@ -12,6 +13,7 @@
     <td><% if row['on_sale'] == 't' %>
         <img src='sale_pic.jpg' />
           <% end %></td>
+    <td><a href="/products/search?q=<%= URI.escape(row['name']) %>"> Search on Twitter </a> </td>
   </tr>
   <% end %>
 </table>
