@@ -44,11 +44,18 @@ get '/products.json' do
   @rs.to_json
 end
 
-get '/products/search' do
+get '/products/search/twitter' do
   @q = params[:q]
   file = open("http://search.twitter.com/search.json?q=#{URI.escape(@q)}")
   @results = JSON.load(file.read)
-  erb :search_results
+  erb :search_results_twitter
+end
+
+get '/products/search/google' do
+  @q = params[:q]
+  file = open("https://www.googleapis.com/shopping/search/v1/public/products?key=AIzaSyCJO615wXOmLuktUIFAXb14moV7qNvmT4E&country=US&q=#{URI.escape(@q)}&alt=json", :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)
+  @results = JSON.load(file.read)
+  erb :search_results_google
 end
 
 get '/new-product' do

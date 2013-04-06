@@ -4,9 +4,9 @@
 <% @results["items"].each do |item| %>
 <%  product = item["product"] %>
 <div>
-<img src="<%= product["images"][0]["link"] %>">
+<img class="search" src="<%= product["images"][0]["link"] %>">
     <p><%= product["description"] %></p>
-    <p><%= product["link"] %></p>
+    <p><a href="<%= product["link"] %>"> Buy Me! </a>
 
   </div>
 <% end %>

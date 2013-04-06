@@ -34,10 +34,14 @@ a {
   display: inline-block;
   border: none;
   background: none;
-
 }
+
 img {
   width: 50px;
+}
+
+.search {
+  width: 100px;
 }
 
 table {
