@@ -2,12 +2,11 @@
 
 
 <% @results["items"].each do |item| %>
-<%  item["product"].each do |product| %>
+<%  product = item["product"] %>
 <div>
 <img src="<%= product["images"][0]["link"] %>">
     <p><%= product["description"] %></p>
     <p><%= product["link"] %></p>
 
   </div>
-<% end %>
 <% end %>
